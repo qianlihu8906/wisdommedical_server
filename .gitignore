@@ -2,7 +2,7 @@
 
 # C extensions
 *.so
-
+data-dev.sqlite
 # Packages
 *.egg
 *.egg-info
