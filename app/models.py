@@ -34,7 +34,7 @@ class Doctor(db.Model):
                 'pic':self.pic,
                 'descp':self.descp
             }
-        return doctor_json
+        return doctor_json;
 
 
 class Family(db.Model):

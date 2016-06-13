@@ -183,6 +183,7 @@ def family_member_all_sensor():
         m["birthday"] = datetime.strftime(member.birthday,"%Y-%m-%d")
         m["weight"] = member.weight
         m["height"] = member.height
+        m["pic"] = member.pic
         if xueya is not None:
             m["xueya"] = xueya.sensor_data
         if xueyang is not None:

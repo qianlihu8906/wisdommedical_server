@@ -70,6 +70,22 @@ def doctor():
 
     return jsonify(doctor.to_json())
 
+@api.route('/doctor/getpic',methods=["POST"])
+@verify_access_token
+def doctor_getpic():
+    doctor_name = request.json.get('doctor_name')
+
+    if not doctor_name:
+        return bad_request(40010)
+    user = User.query.filter_by(username=doctor_name,role=Role.DOCTOR).first()
+    if user is None:
+        return bad_request(40007)
+    doctor = Doctor.query.filter_by(doctor_name=doctor_name).first()
+    if doctor is None:
+        return bad_request(40006)
+
+    return jsonify(doctor.to_json())
+
 @api.route('/doctor/all')
 @verify_access_token
 def doctor_all():
